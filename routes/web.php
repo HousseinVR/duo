@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PorteFolioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontController::class ,"index"])->name('home');
+Route::get('/blog',[FrontController::class,'blog'])->name('blog');
+Route::get('/portefolio', [FrontController::class ,"portefolio"])->name('portefolio');
+Route::get('/contact', [FrontController::class,"contact"])->name('contact');
+Route::get('/admin',[FrontController::class,"dashboard"])->name('dash');
 
-Route::get('/blog', function () {
-    return view('pages.blog');
-});
-Route::get('/portefolio', function () {
-    return view('pages.portefolio');
-});
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
+// afficher
+Route::get('/admin/dashboard/blog', [BlogController::class,"index"])->name('blog_form');
+Route::get('/admin/dashboard/portefolio',[PorteFolioController::class,"index"])->name('portefolio_form');
+// Get
+Route::get('/admin/blog',[BlogController::class,"create"])->name('blog_create');
+Route::get('/admin/portefolio',[PorteFolioController::class,"create"])->name('portefolio_create');
+
+// Post
+Route::post('/admin/blog/store',[BlogController::class,"store"])->name('blog_store') ;
+Route::post('/admin/portefolio/store',[PorteFolioController::class,"store"])->name('portefolio_store');
