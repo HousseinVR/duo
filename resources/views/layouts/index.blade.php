@@ -71,6 +71,9 @@
                         <li>
                             <a href="contact">Contact</a>
                         </li>
+                        <li>
+                            <a href="">DashBoard</a>
+                        </li>
                     </ul><!-- /.navbar-nav -->
                 </div><!-- /.navbar-collapse -->
 

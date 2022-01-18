@@ -20,22 +20,19 @@
                         <img src={{asset('/img/portfolio-1.jpg')}} alt="" class="img-carousel">
                         <div class="portfolio-info">
                             <div class="portfolio-info-top">
-                                <h3>{{ $item-->titre }}</h3>
+                                <h3>{{$item->titre}}</h3>
                             </div><!-- /.portfolio-info-top -->
                             <div class="portfolio-info-bottom">
-                                <p>{{ $item --> description }}</p>
+                                <p>{{$item->description}}</p>
                             </div><!-- /.portfolio-info-bottom -->
                         </div><!-- /.portfolio-info  -->
                     </a>
+                    @empty
+                      <h2> Rien a afficher pour l'instant</h2>
+                    @endforelse
                 </div><!-- /.col-lg-fifth  -->
 
-                @empty
-
-                <h1>il n' ya rien ici</h1>
-
-
-                @endforelse
-
+                </div><!-- /.col-lg-fifth  -->
 
             </div><!-- /#grid -->
 
