@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\BlogController;
+// use App\Http\Controllers\PorteFolioController;
 use App\Http\Controllers\PorteFolioController;
 
 
@@ -37,7 +38,7 @@ Route::post('/admin/portefolio/store',[PorteFolioController::class,"store"])->na
 
 // ROUTES DASHBOARD BLOG ET PORTEFOLIO
 
-Route::get('/admin/porteFolio/change', [PorteFolioController::class , "modif"])->name('portefolio.change');
+Route::get('/admin/porteFolio/changes', [PorteFolioController::class , "modif"])->name('portefolio.change');
 
 // SUPPRIMER
 

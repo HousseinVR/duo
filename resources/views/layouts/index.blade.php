@@ -72,7 +72,7 @@
                             <a href="contact">Contact</a>
                         </li>
                         <li>
-                            <a href="">DashBoard</a>
+                            <a href={{route('dash')}}>DashBoard</a>
                         </li>
                     </ul><!-- /.navbar-nav -->
                 </div><!-- /.navbar-collapse -->
